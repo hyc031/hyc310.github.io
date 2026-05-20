@@ -4,12 +4,16 @@ theme: "PaperMod"
 publishDir: "docs"
 
 # 语言设置
-languageCode: "zh-cn"
-defaultContentLanguage: "zh"
+# 修复点 7：Hugo v0.158 起 `languageCode` 已弃用，改名为 `locale`（构建时会有 deprecation warning）
+locale: "zh-cn"
+# 修复点 6：与 locale 保持一致，否则会加载错误的 i18n 翻译文件 (zh.yaml vs zh-cn.yaml)
+defaultContentLanguage: "zh-cn"
 hasCJKLanguage: true # 开启中文字数统计与微调
 
+# 修复点 2：Hugo v0.128 起 `paginate` 已弃用，改为 pagination.pagerSize
 # 每页显示的文章数量
-paginate: 5
+pagination:
+  pagerSize: 5
 
 # 搜索部分内容
 outputs:
@@ -52,7 +56,12 @@ menu:
 params:
   homeInfoParams:
     Title: "M1L4nCh01y"
-    Image: "images/avatar.jpeg"
+    # 修复点 1a：自定义 partial layouts/partials/home_info.html 读取的是 .ImageUrl，原来写成 Image 导致头像不渲染
+    # 修复点 1b：图片须放在 static/ 或 assets/ 才会被 Hugo 发布；现已复制到 static/images/avatar.jpeg
+    ImageUrl: "/images/avatar.jpeg"
+    ImageTitle: "M1L4nCh01y"
+    ImageWidth: 120
+    ImageHeight: 120
     Content: "一些学习过程中的笔记"
 
     
@@ -77,19 +86,24 @@ params:
   # 是否在代码块上显示“复制”按钮
   ShowCodeCopyButtons: true
 
+  # 修复点 4：PaperMod 显示 TOC 的总开关是 ShowToc；TocOpen 仅控制默认是否展开。
+  # 原来只配置了 TocOpen 导致目录始终不出现，需补上 ShowToc。
+  ShowToc: true
+
   # 主页字样配置 (Profile Mode)
   # 如果你想让主页变成一个大大的个人名片，可以开启这个
   profileMode:
     enabled: false # 改为 true 启用名片模式，false 则默认展示文章列表
     title: "你好，我是 Chenyouli 👋"
     subtitle: "欢迎来到 my 个人空间"
-    imageUrl: "images/avatar.png" # 你的头像路径
+    # 修复点 1c：原来扩展名误写为 .png，实际文件是 .jpeg；同时补上前导 / 使其指向站点根
+    imageUrl: "/images/avatar.jpeg" # 你的头像路径
 
   # 社交媒体链接 (会以图标形式展示在首页)
+  # 修复点 5：清理列表项之间含空白字符的空行，避免严格 YAML 解析器/格式化器误判
   socialIcons:
     - name: "github"
       url: "https://github.com/hyc031"
-       
     - name: "email"
       url: "mailto:youlic310@outlook.com"
 
