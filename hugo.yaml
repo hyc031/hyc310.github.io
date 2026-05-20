@@ -1,27 +1,84 @@
 baseURL: "https://hyc031.github.io/"
-
-languageCode: "zh-cn"
 title: "HYC 的博客"
 theme: "PaperMod"
 
-params:
-  defaultTheme: auto
-  ShowReadingTime: true
-  ShowCodeCopyButtons: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
 
+# 语言设置
+languageCode: "zh-cn"
+defaultContentLanguage: "zh"
+hasCJKLanguage: true # 开启中文字数统计与微调
+
+# 每页显示的文章数量
+paginate: 5
+
+# 搜索部分内容
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # 这一行是关键！允许 Hugo 生成搜索所需的 JSON 索引文件
+
+
+# params:
+#   defaultTheme: auto
+#   ShowReadingTime: true
+#   ShowCodeCopyButtons: true
+#   ShowPostNavLinks: true    # 上一篇和下一篇文章链接
+#   ShowBreadCrumbs: true     # 面包屑导航
+
+# 导航栏配置 (Menu)
 menu:
   main:
     - identifier: posts
-      name: 文章
+      name: "文章"
       url: /posts/
       weight: 10
     - identifier: archives
-      name: 归档
+      name: "归档"
       url: /archives/
       weight: 20
     - identifier: search
-      name: 搜索
+      name: "搜索"
       url: /search/
       weight: 30
+
+
+# ---- ⚠️ 以下是 PaperMod 专属的高级参数配置 ----
+params:
+  env: production # 环境
+  title: "HYC 的博客"
+  description: "一些学习过程中的笔记"
+  keywords: [Blog, Hugo, PaperMod]
+  # author: "HuaiyuanChen"
+  
+  # 默认主题模式：light (亮色), dark (暗色), auto (跟随系统)
+  defaultTheme: auto
+  # 是否显示切换亮/暗色模式的太阳/月亮按钮
+  ShowThemeToggle: true
+
+  # 是否显示面包屑导航
+  ShowBreadCrumbs: true
+  # 是否在文章页显示字数和阅读时间
+  ShowReadingTime: true
+  # 是否在代码块上显示“复制”按钮
+  ShowCodeCopyButtons: true
+
+  # 主页字样配置 (Profile Mode)
+  # 如果你想让主页变成一个大大的个人名片，可以开启这个
+  profileMode:
+    enabled: false # 改为 true 启用名片模式，false 则默认展示文章列表
+    title: "你好，我是 Chenyouli 👋"
+    subtitle: "欢迎来到 my 个人空间"
+    imageUrl: "images/avatar.png" # 你的头像路径
+
+  # 社交媒体链接 (会以图标形式展示在首页)
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/hyc031"
+       
+    - name: "email"
+      url: "mailto:youlic310@outlook.com"
+
+  # 目录配置 (Table of Contents)
+  # 在文章里根据你的 # ## ### 自动生成右侧悬浮目录
+  TocOpen: true # 是否默认展开目录
