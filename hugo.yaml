@@ -1,7 +1,7 @@
 baseURL: "https://hyc031.github.io/"
 title: "M1L4nCh01y"
 theme: "PaperMod"
-
+publishDir: "docs"
 
 # 语言设置
 languageCode: "zh-cn"
