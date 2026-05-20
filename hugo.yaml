@@ -42,6 +42,11 @@ menu:
       name: "文章"
       url: /posts/
       weight: 10
+    # 新增：随笔栏目入口，weight 介于 posts(10) 与 archives(20) 之间，使其紧挨"文章"
+    - identifier: notes
+      name: "随笔"
+      url: /notes/
+      weight: 15
     - identifier: archives
       name: "归档"
       url: /archives/
@@ -67,6 +72,11 @@ params:
     
 
 
+
+  # 首页文章列表只取 posts 区，避免随笔 (notes) 混入首页
+  # 不显式指定时 Hugo 会"挑文章最多的 section"作为主区，行为依赖内容数量，不稳定
+  mainSections:
+    - posts
 
   env: production # 环境
   title: "HYC 的博客"
