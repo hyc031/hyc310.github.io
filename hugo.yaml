@@ -1,5 +1,5 @@
 baseURL: "https://hyc031.github.io/"
-title: "HYC 的博客"
+title: "M1L4nCh01y"
 theme: "PaperMod"
 
 
@@ -17,6 +17,11 @@ outputs:
     - HTML
     - RSS
     - JSON # 这一行是关键！允许 Hugo 生成搜索所需的 JSON 索引文件
+
+# 启用封面图片功能
+cover:
+  hiddenInList: false # 在文章列表和首页显示封面
+  hiddenInSingle: true # 在单页隐藏封面
 
 
 # params:
@@ -45,6 +50,15 @@ menu:
 
 # ---- ⚠️ 以下是 PaperMod 专属的高级参数配置 ----
 params:
+  homeInfoParams:
+    Title: "M1L4nCh01y"
+    Image: "images/avatar.jpeg"
+    Content: "一些学习过程中的笔记"
+
+    
+
+
+
   env: production # 环境
   title: "HYC 的博客"
   description: "一些学习过程中的笔记"
