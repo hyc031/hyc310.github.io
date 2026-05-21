@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>随笔 on M1L4nCh01y</title>
-    <link>https://hyc031.github.io/notes/</link>
+    <link>http://localhost:1313/notes/</link>
     <description>Recent content in 随笔 on M1L4nCh01y</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 20 May 2026 16:00:00 +0800</lastBuildDate>
-    <atom:link href="https://hyc031.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇随笔</title>
-      <link>https://hyc031.github.io/notes/hello-notes/</link>
+      <link>http://localhost:1313/notes/hello-notes/</link>
       <pubDate>Wed, 20 May 2026 16:00:00 +0800</pubDate>
-      <guid>https://hyc031.github.io/notes/hello-notes/</guid>
+      <guid>http://localhost:1313/notes/hello-notes/</guid>
       <description>&lt;p&gt;这是随笔区的第一篇。这里不写技术，只记录一些日常想法、片段。&lt;/p&gt;
 &lt;p&gt;随时可以删掉这篇示例。&lt;/p&gt;</description>
     </item>
